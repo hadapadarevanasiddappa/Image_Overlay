@@ -6,7 +6,7 @@ __pycache__/
 venv/
 env/
 .venv/
-
+.env
 # Nested repos
 Image_Overlay/
 
