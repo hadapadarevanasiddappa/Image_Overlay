@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+.venv/
+
+# Nested repos
+Image_Overlay/
+
+# IDEs
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db

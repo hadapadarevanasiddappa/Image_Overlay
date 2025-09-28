@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Glow Text App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">GlowTextApp</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/login">Sign In</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="glow">Add Glowing Text Behind Your Image</h1>
+
+        <form action="/process" method="POST" enctype="multipart/form-data">
+            <label for="image">Upload Image:</label>
+            <input type="file" name="image" required><br><br>
+
+            <label for="custom_text">Enter Text:</label>
+            <input type="text" name="custom_text" required><br><br>
+
+            <label for="font_style">Font Style:</label>
+            <select name="font_style" required>
+                {% for font in fonts %}
+                    <option value="{{ font }}">{{ font }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label for="text_color">Text Color:</label>
+            <input type="color" name="text_color" value="#ffffff"><br><br>
+
+            <label for="font_scale">Font Size (% of image height):</label>
+            <input type="range" name="font_scale" min="25" max="100" value="50"><br><br>
+
+            <button type="submit">Upload & Process</button>
+        </form>
+    </div>
+</body>
+</html>
